@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1473868630 source:/media/Here/semestre #5/Seminario ED2/indices/list.cpp
+	"list.h"
+
+1473868676 /media/Here/semestre #5/Seminario ED2/indices/list.h
+	<fstream>
+	<iostream>
+	<string>
+	<stdlib.h>
+	"node.h"
+	"node.cpp"
+
+1473868040 /media/Here/semestre #5/Seminario ED2/indices/node.h
+	<iostream>
+
+1473868075 /media/Here/semestre #5/Seminario ED2/indices/node.cpp
+	"node.h"
+
+1473868248 source:/media/Here/semestre #5/Seminario ED2/indices/main.cpp
+	<iostream>
+	"persona.h"
+	"list.h"
+
+1473869152 /media/Here/semestre #5/Seminario ED2/indices/persona.h
+	<string>
+
+1473868075 source:/media/Here/semestre #5/Seminario ED2/indices/node.cpp
+	"node.h"
+
+1473869150 source:/media/Here/semestre #5/Seminario ED2/indices/persona.cpp
+	"persona.h"
+
