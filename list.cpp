@@ -363,7 +363,6 @@ void List<T>::save_file(string file)
     } else {
         while (temp) {
             out << temp->data;
-            out << " ";
             temp = temp->next;
         }
     }

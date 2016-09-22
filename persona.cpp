@@ -1,4 +1,5 @@
 #include "persona.h"
+#include <iostream>
 
 using namespace std;
 
@@ -6,10 +7,10 @@ Persona::Persona() {
 
 }
 
-Persona::Persona(std::string nom, std::string apei, std::string carre, std::string fecha){
+Persona::Persona(std::string nom, std::string apei, std::string carre, std::string fecha) {
     nombre = nom;
     apeido = apei;
-    carrea = carre;
+    carrera = carre;
     fechaNacimiento = fecha;
 }
 
@@ -22,7 +23,7 @@ string Persona::getApeido() {
 }
 
 string Persona::getCarrera() {
-    return carrea;
+    return carrera;
 }
 
 string Persona::getFechaNacimiento() {
@@ -38,9 +39,14 @@ void Persona::setApeido(std::string ape) {
 }
 
 void Persona::setCarrera(std::string carre) {
-    carrea = carre;
+    carrera = carre;
 }
 
 void Persona::setFechaNacimiento(std::string fecha) {
     fechaNacimiento = fecha;
+}
+
+ostream& operator << (ostream &o, const Persona &p) {
+    o << "|" << p.nombre << "|" << p.apeido << "|" << p.carrera << "|" << p.fechaNacimiento << "\n";
+    return o;
 }

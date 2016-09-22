@@ -9,7 +9,7 @@ class Persona
 
 		std::string nombre,
 		apeido,
-		carrea,
+		carrera,
 		fechaNacimiento;
 
     public:
@@ -25,6 +25,10 @@ class Persona
         void setApeido(std::string);
         void setCarrera(std::string);
         void setFechaNacimiento(std::string);
+
+        ///friend void toStream();
+
+         friend std::ostream& operator << (std::ostream &o, const Persona &p);
 
 };
 
