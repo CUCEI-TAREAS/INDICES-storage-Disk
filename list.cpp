@@ -4,16 +4,14 @@ using namespace std;
 
 // Constructor por defecto
 template<typename T>
-List<T>::List()
-{
+List<T>::List() {
     m_num_nodes = 0;
     m_head = NULL;
 }
 
 // Insertar al inicio
 template<typename T>
-void List<T>::add_head(T data_)
-{
+void List<T>::add_head(T data_) {
     Node<T> *new_node = new Node<T> (data_);
     Node<T> *temp = m_head;
 
@@ -32,8 +30,7 @@ void List<T>::add_head(T data_)
 
 // Insertar al final
 template<typename T>
-void List<T>::add_end(T data_)
-{
+void List<T>::add_end(T data_) {
     Node<T> *new_node = new Node<T> (data_);
     Node<T> *temp = m_head;
 
@@ -50,8 +47,7 @@ void List<T>::add_end(T data_)
 
 // Insertar de manera ordenada
 template<typename T>
-void List<T>::add_sort(T data_)
-{
+void List<T>::add_sort(T data_) {
     Node<T> *new_node = new Node<T> (data_);
     Node<T> *temp = m_head;
 
@@ -74,8 +70,7 @@ void List<T>::add_sort(T data_)
 
 // Concatenar a otra List
 template<typename T>
-void List<T>::concat(List list)
-{
+void List<T>::concat(List list) {
     Node<T> *temp2 = list.m_head;
 
     while (temp2) {
@@ -86,16 +81,14 @@ void List<T>::concat(List list)
 
 // Eliminar todos los nodos
 template<typename T>
-void List<T>::del_all()
-{
+void List<T>::del_all() {
     m_head->delete_all();
     m_head = 0;
 }
 
 // Eliminar por data del nodo
 template<typename T>
-void List<T>::del_by_data(T data_)
-{
+void List<T>::del_by_data(T data_) {
     Node<T> *temp = m_head;
     Node<T> *temp1 = m_head->next;
 
@@ -124,8 +117,7 @@ void List<T>::del_by_data(T data_)
 
 // Eliminar por posición del nodo
 template<typename T>
-void List<T>::del_by_position(int pos)
-{
+void List<T>::del_by_position(int pos) {
     Node<T> *temp = m_head;
     Node<T> *temp1 = temp->next;
 
@@ -149,8 +141,7 @@ void List<T>::del_by_position(int pos)
 
 // Llenar la Lista por teclado
 template<typename T>
-void List<T>::fill_by_user(int dim)
-{
+void List<T>::fill_by_user(int dim) {
     T ele;
     for (int i = 0; i < dim; i++) {
         cout << "Ingresa el elemento " << i + 1 << endl;
@@ -161,8 +152,7 @@ void List<T>::fill_by_user(int dim)
 
 // Llenar la Lista aleatoriamente para enteros
 template<typename T>
-void List<T>::fill_random(int dim)
-{
+void List<T>::fill_random(int dim) {
     srand(time(NULL));
     for (int i = 0; i < dim; i++) {
         add_end(rand() % 100);
@@ -171,8 +161,7 @@ void List<T>::fill_random(int dim)
 
 // Usado por el método intersección
 template<typename T>
-void insert_sort(T a[], int size)
-{
+void insert_sort(T a[], int size) {
     T temp;
     for (int i = 0; i < size; i++) {
         for (int j = i-1; j>= 0 && a[j+1] < a[j]; j--) {
@@ -185,8 +174,7 @@ void insert_sort(T a[], int size)
 
 // Números que coinciden en 2 Lists
 template<typename T>
-void List<T>::intersection(List list_2)
-{
+void List<T>::intersection(List list_2) {
     Node<T> *temp = m_head;
     Node<T> *temp2 = list_2.m_head;
 
@@ -227,33 +215,32 @@ void List<T>::intersection(List list_2)
     // Índice del 2do vector (v2)
     int v2_i = 0;
 
-  // Mientras no haya terminado de recorrer ambas Lists
-  while (v1_i < m_num_nodes && v2_i < num_nodes_2) {
-      if (v1[v1_i] == v2[v2_i]) {
-          intersection_list.add_end(v1[v1_i]);
-          v1_i++;
-          v2_i++;
-          num_inter++;
-      } else if (v1[v1_i] < v2[v2_i]) {
-          v1_i++;
-      } else {
-          v2_i++;
-      }
-  }
+    // Mientras no haya terminado de recorrer ambas Lists
+    while (v1_i < m_num_nodes && v2_i < num_nodes_2) {
+        if (v1[v1_i] == v2[v2_i]) {
+            intersection_list.add_end(v1[v1_i]);
+            v1_i++;
+            v2_i++;
+            num_inter++;
+        } else if (v1[v1_i] < v2[v2_i]) {
+            v1_i++;
+        } else {
+            v2_i++;
+        }
+    }
 
-  // Solo si hay alguna intersección imprimo la nueva lista creada
-  if (num_inter > 0) {
-      cout << "Existen " << num_inter << " intersecciones " << endl;
-      intersection_list.print();
-  } else {
-      cout << "No hay intersección en ambas listas" << endl;
-  }
+    // Solo si hay alguna intersección imprimo la nueva lista creada
+    if (num_inter > 0) {
+        cout << "Existen " << num_inter << " intersecciones " << endl;
+        intersection_list.print();
+    } else {
+        cout << "No hay intersección en ambas listas" << endl;
+    }
 }
 
 // Invertir la lista
 template<typename T>
-void List<T>::invert()
-{
+void List<T>::invert() {
     Node<T> *prev = NULL;
     Node<T> *next = NULL;
     Node<T> *temp = m_head;
@@ -269,8 +256,7 @@ void List<T>::invert()
 
 // Cargar una lista desde un archivo
 template<typename T>
-void List<T>::load_file(string file)
-{
+void List<T>::load_file(string file) {
     T line;
     ifstream in;
     in.open(file.c_str());
@@ -287,8 +273,7 @@ void List<T>::load_file(string file)
 
 // Imprimir la Lista
 template<typename T>
-void List<T>::print()
-{
+void List<T>::print() {
     Node<T> *temp = m_head;
     if (!m_head) {
         cout << "La Lista está vacía " << endl;
@@ -296,16 +281,15 @@ void List<T>::print()
         while (temp) {
             temp->print();
             if (!temp->next) cout << "NULL";
-                temp = temp->next;
+            temp = temp->next;
         }
-  }
-  cout << endl << endl;
+    }
+    cout << endl << endl;
 }
 
 // Buscar el dato de un nodo
 template<typename T>
-void List<T>::search(T data_)
-{
+void List<T>::search(T data_) {
     Node<T> *temp = m_head;
     int cont = 1;
     int cont2 = 0;
@@ -327,8 +311,7 @@ void List<T>::search(T data_)
 
 // Ordenar de manera ascendente
 template<typename T>
-void List<T>::sort()
-{
+void List<T>::sort() {
     T temp_data;
     Node<T> *aux_node = m_head;
     Node<T> *temp = aux_node;
@@ -352,8 +335,7 @@ void List<T>::sort()
 
 // Guardar una lista en un archivo
 template<typename T>
-void List<T>::save_file(string file)
-{
+void List<T>::save_file(string file) {
     Node<T> *temp = m_head;
     ofstream out;
     out.open(file.c_str());
@@ -368,6 +350,29 @@ void List<T>::save_file(string file)
     }
     out.close();
 }
+
+// Guardar una index en archivo
+template<typename T>
+void List<T>::save_file_index(string file) {
+    Node<T> *temp = m_head;
+    ofstream out;
+    out.open(file.c_str());
+
+    if (!out.is_open()) {
+        cout << "No se puede guardar el archivo " << endl;
+    } else {
+        while (temp) {
+            out.write((char*)((temp->data.getApeido).c_str()), 35);
+            temp = temp->next;
+        }
+    }
+    out.close();
+}
+/**
+	std::cout.fill(' ');
+	std::cout.width(MAX_CHARACTER_FOR_MOVIE);
+std::cout << std::left
+*/
 
 template<typename T>
 List<T>::~List() {}

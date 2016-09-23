@@ -34,6 +34,7 @@ class List
         void load_file_binary(string);
         void print();
         void save_file(string);
+        void save_file_index(string);
         void save_file_binary(string);
         void search(T);
         void sort();
