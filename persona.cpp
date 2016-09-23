@@ -47,6 +47,27 @@ void Persona::setFechaNacimiento(std::string fecha) {
 }
 
 ostream& operator << (ostream &o, const Persona &p) {
-    o << "|" << p.nombre << "|" << p.apeido << "|" << p.carrera << "|" << p.fechaNacimiento << "\n";
+    o << p.nombre << "|" << p.apeido << "|" << p.carrera << "|" << p.fechaNacimiento << "\n";
+    return o;
+}
+
+istream& operator >> (istream&o, Persona &p) {
+    string temp;
+    o >> temp;
+
+    short pos = temp.find('|');
+     p.nombre = temp.substr(0, pos);
+
+    temp = temp.substr(pos + 1);
+    pos = temp.find('|');
+    p.apeido =  temp.substr(0, pos);
+
+    temp = temp.substr(pos + 1);
+    pos = temp.find('|');
+    p.carrera =  temp.substr(0, pos);
+
+    temp = temp.substr(pos + 1);
+    p.fechaNacimiento = temp;
+
     return o;
 }

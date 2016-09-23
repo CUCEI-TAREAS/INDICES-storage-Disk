@@ -28,8 +28,8 @@ class Persona
 
         ///friend void toStream();
 
-         friend std::ostream& operator << (std::ostream &o, const Persona &p);
-
+        friend std::ostream& operator << (std::ostream &o, const Persona &p);
+        friend std::istream& operator >> (std::istream &o, Persona &p);
 };
 
 #endif // PERSONA_H
