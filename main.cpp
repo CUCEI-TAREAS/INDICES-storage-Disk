@@ -19,15 +19,13 @@ int main() {
 
     List<Persona> estudiantes;
     Persona felipe("Felipe", "Ruiz", "Informatica", "250496");
-    Persona joe("Joe", "Perez", "Computacion", "020795");
-    Persona fer("Fernanda", "Rios", "Electronica", "120897");
-
     estudiantes.add_head(felipe);
-    estudiantes.add_head(joe);
-    estudiantes.add_head(fer);
 
-    estudiantes.save_file(NAMEFILE_DATA);
-    estudiantes.save_file_index(NAMEFILE_INDEX);
+    ///estudiantes.save_file(NAMEFILE_DATA);
+    ///estudiantes.save_index(NAMEFILE_INDEX);
+
+    estudiantes.save_file_binary(NAMEFILE_DATA, NAMEFILE_INDEX_BINARY);
+
 
 
     estudiantes.del_all();

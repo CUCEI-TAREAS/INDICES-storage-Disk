@@ -30,10 +30,10 @@
 1473869150 source:/media/Here/semestre #5/Seminario ED2/indices/persona.cpp
 	"persona.h"
 
-1474650585 source:/home/pipo/INDICES-storage-Disk/list.cpp
+1474722909 source:/home/pipo/INDICES-storage-Disk/list.cpp
 	"list.h"
 
-1474650357 /home/pipo/INDICES-storage-Disk/list.h
+1474722890 /home/pipo/INDICES-storage-Disk/list.h
 	<fstream>
 	<iostream>
 	<string>
@@ -47,7 +47,7 @@
 1474647514 /home/pipo/INDICES-storage-Disk/node.cpp
 	"node.h"
 
-1474650357 source:/home/pipo/INDICES-storage-Disk/main.cpp
+1474721320 source:/home/pipo/INDICES-storage-Disk/main.cpp
 	<iostream>
 	<fstream>
 	"persona.h"
@@ -57,7 +57,7 @@
 1474643656 /home/pipo/INDICES-storage-Disk/persona.h
 	<string>
 
-1474650585 /home/pipo/INDICES-storage-Disk/list.cpp
+1474722909 /home/pipo/INDICES-storage-Disk/list.cpp
 	"list.h"
 
 1474647514 source:/home/pipo/INDICES-storage-Disk/node.cpp

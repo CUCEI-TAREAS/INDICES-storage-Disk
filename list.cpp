@@ -353,7 +353,7 @@ void List<T>::save_file(string file) {
 
 // Guardar una index en archivo
 template<typename T>
-void List<T>::save_file_index(string file) {
+void List<T>::save_index(string file) {
     Node<T> *temp = m_head;
     ofstream out;
     out.open(file.c_str());
@@ -362,7 +362,44 @@ void List<T>::save_file_index(string file) {
         cout << "No se puede guardar el archivo " << endl;
     } else {
         while (temp) {
-            out.write((char*)((temp->data.getApeido).c_str()), 35);
+            out << temp->data;
+            temp = temp->next;
+        }
+    }
+    out.close();
+}
+
+// Guardar una lista en un archivo
+template<typename T>
+void List<T>::save_file_binary(string file, string ind) {
+    Node<T> *temp = m_head;
+    ofstream out, index(ind.c_str());
+    out.open(file.c_str());
+
+    if (!out.is_open()) {
+        cout << "No se puede guardar el archivo " << endl;
+    } else {
+        while (temp) {
+            out.write(temp->data.getNombre().c_str(), sizeof(temp->data.getNombre()));
+            out .write((char*)&(temp->data), sizeof (temp->data));
+            temp = temp->next;
+        }
+    }
+    out.close();
+}
+
+// Guardar una index en archivo
+template<typename T>
+void List<T>::save_index_binary(string file) {
+    Node<T> *temp = m_head;
+    ofstream out;
+    out.open(file.c_str());
+
+    if (!out.is_open()) {
+        cout << "No se puede guardar el archivo " << endl;
+    } else {
+        while (temp) {
+            out << temp->data;
             temp = temp->next;
         }
     }
