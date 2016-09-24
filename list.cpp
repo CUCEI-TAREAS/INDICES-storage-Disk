@@ -379,8 +379,11 @@ void List<T>::save_file_binary(string file, string ind) {
     if (!out.is_open()) {
         cout << "No se puede guardar el archivo " << endl;
     } else {
+        long pos = 0;
         while (temp) {
-            out.write(temp->data.getNombre().c_str(), sizeof(temp->data.getNombre()));
+                char x[35];
+                x[0] = temp->data.getNombre().c_str();
+                index.write(x, sizeof(35));
             out .write((char*)&(temp->data), sizeof (temp->data));
             temp = temp->next;
         }
