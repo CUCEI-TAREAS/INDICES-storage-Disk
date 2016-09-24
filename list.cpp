@@ -386,6 +386,7 @@ void List<T>::save_file_binary(string file, string ind) {
         }
     }
     out.close();
+    index.close();
 }
 
 // Guardar una index en archivo
